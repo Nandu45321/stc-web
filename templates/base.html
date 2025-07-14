@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}STC - IISER TVM{% endblock %}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Lora&family=Raleway:wght@500;800&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#134965',
+                        secondary: '#214965',
+                        accent: '#dcf3f5',
+                        light: '#e6f5fa'
+                    },
+                    fontFamily: {
+                        comfortaa: ['Comfortaa', 'cursive'],
+                        lora: ['Lora', 'serif'],
+                        raleway: ['Raleway', 'sans-serif'],
+                        nunito: ['Nunito', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f5f5dc] min-h-screen text-[#2f4f4f]">
+    <header class="bg-primary text-accent py-6 border-b-4 border-secondary">
+        <div class="container mx-auto px-4">
+            <h1 class="font-comfortaa text-3xl md:text-4xl font-bold mb-2">Science & Technology Council</h1>
+            <p class="font-lora italic">Indian Institute of Science Education and Research, Thiruvananthapuram</p>
+        </div>
+
+        <nav class="mt-6">
+            <ul class="flex flex-wrap justify-center gap-4 md:gap-8 font-raleway font-semibold">
+                <li><a href="{{ url_for('index') }}" class="hover:text-white transition">Home</a></li>
+                <li><a href="{{ url_for('clubs_page') }}" class="hover:text-white transition">Clubs</a></li>
+                <li><a href="{{ url_for('events_page') }}" class="hover:text-white transition">Events</a></li>
+                <li><a href="#" class="hover:text-white transition">Gallery</a></li>
+                <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                <li><a href="{{ url_for('admin') }}" class="hover:text-white transition">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-secondary text-accent py-10 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-raleway text-xl font-bold uppercase mb-4">Let's Build Something Great Together</h2>
+            <p class="font-lora max-w-2xl mx-auto mb-6">
+                Bringing the CCIT culture to your group work. We're hoping for the best from all of you!
+            </p>
+            <div class="font-comfortaa font-bold text-lg">
+                — KG (Vaibhava)
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

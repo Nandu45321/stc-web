@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-white rounded-xl shadow-lg p-6 mb-8 border border-[#deb887]">
+    <div class="text-center max-w-3xl mx-auto">
+        <h2 class="font-raleway text-primary text-2xl font-bold uppercase mb-4 border-b-2 border-primary pb-2">
+            Welcome to STC Portal
+        </h2>
+        <p class="font-lora text-lg italic mb-6">
+            Your platform for science, technology, and innovation at IISER TVM
+        </p>
+    </div>
+
+    <div class="bg-primary text-accent p-4 rounded-lg text-center font-comfortaa font-semibold my-6 border border-[#654321]">
+        Project Duration: 2 weeks from today
+    </div>
+</section>
+
+<section class="bg-[#faf0e6] rounded-xl shadow-lg p-8 mb-8 border border-[#deb887]">
+    <h2 class="font-raleway text-primary text-2xl font-bold uppercase mb-6 border-b-2 border-primary pb-2">
+        Latest Updates
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {% for event in events %}
+        <div class="bg-[#fff8dc] p-5 rounded-lg border-l-4 border-primary">
+            <h3 class="font-nunito font-bold text-secondary">{{ event.title }}</h3>
+            <p class="mt-2"><i class="far fa-calendar mr-2"></i>{{ event.date }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div class="bg-[#faf0e6] rounded-xl p-6 border border-[#deb887]">
+        <h2 class="font-raleway text-primary text-xl font-bold uppercase mb-4">
+            Project Overview
+        </h2>
+        <div class="space-y-4">
+            <div class="bg-[#fff8dc] p-4 rounded border border-[#deb887]">
+                <h3 class="font-nunito font-bold text-secondary">Project Goal</h3>
+                <p>Build a prototype website for STC of IISER TVM</p>
+            </div>
+            <div class="bg-[#fff8dc] p-4 rounded border border-[#deb887]">
+                <h3 class="font-nunito font-bold text-secondary">Development Platform</h3>
+                <p>GitHub for all development work</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-[#faf0e6] rounded-xl p-6 border border-[#deb887]">
+        <h2 class="font-raleway text-primary text-xl font-bold uppercase mb-4">
+            Core Features
+        </h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-[#fff8dc] p-3 rounded border-l-4 border-[#a0522d]">
+                <h4 class="font-nunito font-bold text-secondary">Updates</h4>
+            </div>
+            <div class="bg-[#fff8dc] p-3 rounded border-l-4 border-[#a0522d]">
+                <h4 class="font-nunito font-bold text-secondary">Navigation</h4>
+            </div>
+            <div class="bg-[#fff8dc] p-3 rounded border-l-4 border-[#a0522d]">
+                <h4 class="font-nunito font-bold text-secondary">Gallery</h4>
+            </div>
+            <div class="bg-[#fff8dc] p-3 rounded border-l-4 border-[#a0522d]">
+                <h4 class="font-nunito font-bold text-secondary">Events</h4>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

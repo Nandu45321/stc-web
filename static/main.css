@@ -1,0 +1,13 @@
+@layer components {
+    .club-card {
+        @apply bg-gradient-to-br from-[#faf0e6] to-[#fff8dc] rounded-lg p-6 shadow-md border border-[#deb887] transform hover:scale-105 transition-transform;
+    }
+
+    .event-card {
+        @apply bg-[#faf0e6] p-5 rounded-lg border border-[#deb887];
+    }
+
+    .feature-card {
+        @apply bg-[#fff8dc] p-3 rounded border-l-4 border-[#a0522d];
+    }
+}
