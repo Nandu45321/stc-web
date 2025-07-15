@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="bg-white rounded-xl shadow-lg p-6 mb-8 border border-[#deb887]">
+<section class="bg-[#faf0e6] rounded-xl shadow-lg p-6 mb-8 border border-[#deb887]">
     <h1 class="font-raleway text-primary text-3xl font-bold uppercase mb-6 text-center border-b-2 border-primary pb-2">
         STC Clubs & Organizations
     </h1>
@@ -9,7 +9,14 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {% for club in clubs %}
         <div class="bg-gradient-to-br from-[#faf0e6] to-[#fff8dc] rounded-lg p-6 shadow-md border border-[#deb887] transform hover:scale-105 transition-transform">
-            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mb-4"></div>
+            <!-- Updated image section -->
+            <div class="w-16 h-16 mb-4 overflow-hidden rounded-lg flex items-center justify-center">
+                <img
+                    src="{{ url_for('static', filename=club.image) }}"
+                    alt="{{ club.name }} Logo"
+                    class="w-full h-full object-contain"
+                >
+            </div>
             <h3 class="font-comfortaa text-xl font-bold text-secondary mb-2">{{ club.name }}</h3>
             <p class="font-nunito">{{ club.description }}</p>
             <button class="mt-4 bg-primary text-accent px-4 py-2 rounded-lg font-raleway font-semibold hover:bg-secondary transition">

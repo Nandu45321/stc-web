@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="bg-white rounded-xl shadow-lg p-6 mb-8 border border-[#deb887]">
+<section class="bg-[#faf0e6] rounded-xl shadow-lg p-6 mb-8 border border-[#deb887]">
     <div class="text-center max-w-3xl mx-auto">
         <h2 class="font-raleway text-primary text-2xl font-bold uppercase mb-4 border-b-2 border-primary pb-2">
             Welcome to STC Portal
@@ -23,7 +23,7 @@
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {% for event in events %}
-        <div class="bg-[#fff8dc] p-5 rounded-lg border-l-4 border-primary">
+        <div class="bg-[#fff8dc] p-5 rounded-lg border-l-4 border-[#deb887]">
             <h3 class="font-nunito font-bold text-secondary">{{ event.title }}</h3>
             <p class="mt-2"><i class="far fa-calendar mr-2"></i>{{ event.date }}</p>
         </div>
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="bg-[#faf0e6] rounded-xl p-6 border border-[#deb887]">
         <h2 class="font-raleway text-primary text-xl font-bold uppercase mb-4">
             Core Features
