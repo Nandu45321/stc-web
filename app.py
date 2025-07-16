@@ -1,6 +1,22 @@
 from flask import Flask, render_template
-
+import os
+import psycopg2
 app = Flask(__name__)
+
+# Database configuration
+app.config['DATABASE'] = os.environ.get('POSTGRES_DB', 'stc_db')
+app.config['DB_USER'] = os.environ.get('POSTGRES_USER', 'stc_user')
+app.config['DB_PASSWORD'] = os.environ.get('POSTGRES_PASSWORD', 'stc_password')
+app.config['DB_HOST'] = os.environ.get('DB_HOST', 'db')
+
+def get_db_connection():
+    conn = psycopg2.connect(
+        database=app.config['DATABASE'],
+        user=app.config['DB_USER'],
+        password=app.config['DB_PASSWORD'],
+        host=app.config['DB_HOST']
+    )
+    return conn
 
 
 pathToClubsImages = "/images/clubs/"  # Do not add static to this path, it's already included by the clubs.html file
